@@ -1,0 +1,44 @@
+"use client";
+
+import { useEffect } from "react";
+import { Button } from "./Button";
+
+type ModalProps = {
+  open: boolean;
+  title: string;
+  onClose: () => void;
+  children: React.ReactNode;
+};
+
+export function Modal({ open, title, onClose, children }: ModalProps) {
+  useEffect(() => {
+    if (!open) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open, onClose]);
+
+  if (!open) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <button
+        type="button"
+        aria-label="Close modal"
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        onClick={onClose}
+      />
+      <div className="relative z-10 w-full max-w-lg rounded-3xl border border-white/10 bg-[#0b1220] p-6 shadow-2xl">
+        <div className="mb-5 flex items-center justify-between gap-4">
+          <h2 className="text-xl font-semibold text-white">{title}</h2>
+          <Button variant="ghost" onClick={onClose} aria-label="Close">
+            ✕
+          </Button>
+        </div>
+        {children}
+      </div>
+    </div>
+  );
+}

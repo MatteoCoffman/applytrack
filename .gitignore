@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env*.local
+
+# Build
+dist/
+.next/
+.aws-sam/
+backend/.aws-sam/
+
+# SAM
+backend/samconfig.toml
+
+# OS / IDE
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Vercel
+.vercel
