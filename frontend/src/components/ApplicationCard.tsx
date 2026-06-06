@@ -18,17 +18,17 @@ export function ApplicationCard({
   onStatusChange,
 }: ApplicationCardProps) {
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:border-blue-400/40 hover:bg-white/10">
+    <article className="rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:shadow-md hover:shadow-emerald-900/5">
       <div className="flex items-start justify-between gap-3">
         <button
           type="button"
           className="min-w-0 flex-1 text-left"
           onClick={() => onEdit(application)}
         >
-          <h3 className="truncate text-base font-semibold text-white">
+          <h3 className="truncate text-base font-semibold text-slate-900">
             {application.company}
           </h3>
-          <p className="mt-1 truncate text-sm text-slate-300">
+          <p className="mt-1 truncate text-sm text-slate-600">
             {application.role}
           </p>
         </button>
@@ -41,7 +41,7 @@ export function ApplicationCard({
       </div>
 
       {(application.appliedAt || application.jobUrl) && (
-        <div className="mt-3 space-y-1 text-xs text-slate-400">
+        <div className="mt-3 space-y-1 text-xs text-slate-500">
           {application.appliedAt && (
             <p>Applied: {application.appliedAt}</p>
           )}
@@ -50,7 +50,7 @@ export function ApplicationCard({
               href={application.jobUrl}
               target="_blank"
               rel="noreferrer"
-              className="block truncate text-blue-200 hover:text-blue-100"
+              className="block truncate text-emerald-600 hover:text-emerald-800"
               onClick={(event) => event.stopPropagation()}
             >
               View posting
@@ -60,7 +60,7 @@ export function ApplicationCard({
       )}
 
       {application.notes && (
-        <p className="mt-3 line-clamp-2 text-sm text-slate-400">
+        <p className="mt-3 line-clamp-2 text-sm text-slate-500">
           {application.notes}
         </p>
       )}

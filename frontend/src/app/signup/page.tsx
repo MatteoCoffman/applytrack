@@ -62,14 +62,14 @@ export default function SignupPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center px-6 py-12">
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-8">
-        <p className="text-xs uppercase tracking-[0.35em] text-blue-200">
+      <div className="w-full max-w-md rounded-3xl border border-emerald-100 bg-white p-8 shadow-lg shadow-emerald-900/5">
+        <p className="text-xs uppercase tracking-[0.35em] text-emerald-600">
           ApplyTrack
         </p>
-        <h1 className="mt-2 text-3xl font-semibold text-white">
+        <h1 className="mt-2 text-3xl font-semibold text-slate-900">
           {needsConfirmation ? "Verify email" : "Sign up"}
         </h1>
-        <p className="mt-2 text-slate-400">
+        <p className="mt-2 text-slate-500">
           {needsConfirmation
             ? "Enter the verification code sent to your email."
             : "Create an account to track your job search."}
@@ -83,7 +83,7 @@ export default function SignupPage() {
               onChange={(event) => setCode(event.target.value)}
               required
             />
-            {error && <p className="text-sm text-red-300">{error}</p>}
+            {error && <p className="text-sm text-red-600">{error}</p>}
             <Button type="submit" className="w-full" disabled={submitting}>
               {submitting ? "Verifying..." : "Verify and continue"}
             </Button>
@@ -116,16 +116,16 @@ export default function SignupPage() {
               required
               minLength={8}
             />
-            {error && <p className="text-sm text-red-300">{error}</p>}
+            {error && <p className="text-sm text-red-600">{error}</p>}
             <Button type="submit" className="w-full" disabled={submitting}>
               {submitting ? "Creating account..." : "Create account"}
             </Button>
           </form>
         )}
 
-        <p className="mt-6 text-center text-sm text-slate-400">
+        <p className="mt-6 text-center text-sm text-slate-500">
           Already have an account?{" "}
-          <Link href="/login" className="text-blue-200 hover:text-white">
+          <Link href="/login" className="text-emerald-600 hover:text-emerald-800">
             Log in
           </Link>
         </p>

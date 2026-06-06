@@ -6,12 +6,13 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 
 const variants = {
   primary:
-    "bg-blue-500 text-white hover:bg-blue-400 border border-blue-400/50",
+    "bg-emerald-600 text-white hover:bg-emerald-500 border border-emerald-500/50 shadow-sm shadow-emerald-600/20",
   secondary:
-    "bg-white/5 text-slate-100 hover:bg-white/10 border border-white/10",
+    "bg-white text-slate-700 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-200",
   danger:
-    "bg-red-500/15 text-red-200 hover:bg-red-500/25 border border-red-400/30",
-  ghost: "bg-transparent text-slate-300 hover:text-white hover:bg-white/5 border border-transparent",
+    "bg-red-50 text-red-700 hover:bg-red-100 border border-red-200",
+  ghost:
+    "bg-transparent text-slate-600 hover:text-emerald-700 hover:bg-emerald-50 border border-transparent",
 };
 
 export function Button({

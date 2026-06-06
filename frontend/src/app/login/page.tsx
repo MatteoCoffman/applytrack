@@ -39,12 +39,12 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center px-6 py-12">
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-white/5 p-8">
-        <p className="text-xs uppercase tracking-[0.35em] text-blue-200">
+      <div className="w-full max-w-md rounded-3xl border border-emerald-100 bg-white p-8 shadow-lg shadow-emerald-900/5">
+        <p className="text-xs uppercase tracking-[0.35em] text-emerald-600">
           ApplyTrack
         </p>
-        <h1 className="mt-2 text-3xl font-semibold text-white">Log in</h1>
-        <p className="mt-2 text-slate-400">
+        <h1 className="mt-2 text-3xl font-semibold text-slate-900">Log in</h1>
+        <p className="mt-2 text-slate-500">
           Sign in to manage your job application pipeline.
         </p>
 
@@ -66,16 +66,16 @@ export default function LoginPage() {
             required
           />
 
-          {error && <p className="text-sm text-red-300">{error}</p>}
+          {error && <p className="text-sm text-red-600">{error}</p>}
 
           <Button type="submit" className="w-full" disabled={submitting}>
             {submitting ? "Signing in..." : "Log in"}
           </Button>
         </form>
 
-        <p className="mt-6 text-center text-sm text-slate-400">
+        <p className="mt-6 text-center text-sm text-slate-500">
           No account?{" "}
-          <Link href="/signup" className="text-blue-200 hover:text-white">
+          <Link href="/signup" className="text-emerald-600 hover:text-emerald-800">
             Sign up
           </Link>
         </p>

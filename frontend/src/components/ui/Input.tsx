@@ -7,7 +7,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 };
 
 const inputClassName =
-  "w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-blue-400/60 focus:bg-white/10";
+  "w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20";
 
 export function Input({
   label,
@@ -21,7 +21,7 @@ export function Input({
   if (inline) {
     return (
       <div className="flex items-center gap-2.5 text-sm">
-        <label htmlFor={inputId} className="shrink-0 font-medium text-slate-200">
+        <label htmlFor={inputId} className="shrink-0 font-medium text-slate-700">
           {label}
         </label>
         <input id={inputId} className={`${inputClassName} ${className}`} {...props} />
@@ -31,7 +31,7 @@ export function Input({
 
   return (
     <label htmlFor={inputId} className="block space-y-2 text-sm">
-      <span className="font-medium text-slate-200">{label}</span>
+      <span className="font-medium text-slate-700">{label}</span>
       <input id={inputId} className={`${inputClassName} ${className}`} {...props} />
     </label>
   );

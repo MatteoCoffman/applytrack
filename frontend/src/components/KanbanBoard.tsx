@@ -92,8 +92,8 @@ export function KanbanBoard() {
     <div className="space-y-6">
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h1 className="text-3xl font-semibold text-white">Your pipeline</h1>
-          <p className="mt-2 text-slate-400">
+          <h1 className="text-3xl font-semibold text-slate-900">Your pipeline</h1>
+          <p className="mt-2 text-slate-500">
             Track applications from saved roles through offers.
           </p>
         </div>
@@ -113,7 +113,7 @@ export function KanbanBoard() {
       </div>
 
       {(error || actionError) && (
-        <div className="rounded-2xl border border-red-400/30 bg-red-500/10 px-4 py-3 text-sm text-red-200">
+        <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           <span>{error ?? actionError}</span>
           {error && (
             <button
@@ -128,11 +128,11 @@ export function KanbanBoard() {
       )}
 
       {loading ? (
-        <p className="text-slate-400">Loading applications...</p>
+        <p className="text-slate-500">Loading applications...</p>
       ) : applications.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-white/10 bg-white/[0.03] px-6 py-16 text-center">
-          <h2 className="text-xl font-semibold text-white">No applications yet</h2>
-          <p className="mt-2 text-slate-400">
+        <div className="rounded-3xl border border-dashed border-emerald-200 bg-emerald-50/50 px-6 py-16 text-center">
+          <h2 className="text-xl font-semibold text-slate-900">No applications yet</h2>
+          <p className="mt-2 text-slate-500">
             Add your first saved role or application to start tracking.
           </p>
           <Button className="mt-6" onClick={openCreate}>
@@ -140,9 +140,9 @@ export function KanbanBoard() {
           </Button>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-white/10 bg-white/[0.03] px-6 py-12 text-center">
-          <h2 className="text-xl font-semibold text-white">No matches</h2>
-          <p className="mt-2 text-slate-400">
+        <div className="rounded-3xl border border-dashed border-emerald-200 bg-emerald-50/50 px-6 py-12 text-center">
+          <h2 className="text-xl font-semibold text-slate-900">No matches</h2>
+          <p className="mt-2 text-slate-500">
             No applications match &ldquo;{search.trim()}&rdquo;.
           </p>
           <Button variant="secondary" className="mt-6" onClick={() => setSearch("")}>

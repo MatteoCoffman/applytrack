@@ -75,7 +75,7 @@ export function ApplicationForm({
         required
       />
       <label className="block space-y-2 text-sm">
-        <span className="font-medium text-slate-200">Status</span>
+        <span className="font-medium text-slate-700">Status</span>
         <StatusSelect value={status} onChange={setStatus} />
       </label>
       <Input
@@ -92,17 +92,17 @@ export function ApplicationForm({
         placeholder="https://..."
       />
       <label className="block space-y-2 text-sm">
-        <span className="font-medium text-slate-200">Notes</span>
+        <span className="font-medium text-slate-700">Notes</span>
         <textarea
           value={notes}
           onChange={(event) => setNotes(event.target.value)}
           rows={3}
-          className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-slate-100 outline-none transition placeholder:text-slate-500 focus:border-blue-400/60 focus:bg-white/10"
+          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
           placeholder="Recruiter name, next steps, etc."
         />
       </label>
 
-      {error && <p className="text-sm text-red-300">{error}</p>}
+      {error && <p className="text-sm text-red-600">{error}</p>}
 
       <div className="flex justify-end gap-3 pt-2">
         <Button type="button" variant="secondary" onClick={onCancel}>

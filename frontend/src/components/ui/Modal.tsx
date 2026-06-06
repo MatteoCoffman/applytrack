@@ -31,12 +31,12 @@ export function Modal({ open, title, onClose, children }: ModalProps) {
       <button
         type="button"
         aria-label="Close modal"
-        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="relative z-10 w-full max-w-lg rounded-3xl border border-white/10 bg-[#0b1220] p-6 shadow-2xl">
+      <div className="relative z-10 w-full max-w-lg rounded-3xl border border-emerald-100 bg-white p-6 shadow-xl shadow-emerald-900/10">
         <div className="mb-5 flex items-center justify-between gap-4">
-          <h2 className="text-xl font-semibold text-white">{title}</h2>
+          <h2 className="text-xl font-semibold text-slate-900">{title}</h2>
           <Button variant="ghost" onClick={onClose} aria-label="Close">
             ✕
           </Button>

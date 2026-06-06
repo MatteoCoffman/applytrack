@@ -24,12 +24,12 @@ export function StatusSelect({
       value={value}
       aria-label={ariaLabel ?? "Application status"}
       onChange={(event) => onChange(event.target.value as ApplicationStatus)}
-      className={`rounded-full border border-white/10 bg-white/5 text-slate-100 outline-none focus:border-blue-400/60 ${
+      className={`rounded-full border border-slate-200 bg-white text-slate-800 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 ${
         compact ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-sm"
       }`}
     >
       {APPLICATION_STATUSES.map((status) => (
-        <option key={status} value={status} className="bg-slate-900">
+        <option key={status} value={status} className="bg-white">
           {STATUS_LABELS[status]}
         </option>
       ))}
