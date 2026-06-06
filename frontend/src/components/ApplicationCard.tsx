@@ -36,6 +36,7 @@ export function ApplicationCard({
           compact
           value={application.status}
           onChange={(status) => onStatusChange(application.id, status)}
+          aria-label={`Status for ${application.company}`}
         />
       </div>
 

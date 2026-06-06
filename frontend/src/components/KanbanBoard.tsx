@@ -97,15 +97,16 @@ export function KanbanBoard() {
             Track applications from saved roles through offers.
           </p>
         </div>
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:gap-3">
           <Input
+            inline
             label="Search"
             value={search}
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Company or role"
             className="sm:w-64"
           />
-          <Button onClick={openCreate} className="sm:mt-7">
+          <Button onClick={openCreate} className="shrink-0">
             Add application
           </Button>
         </div>
@@ -136,6 +137,16 @@ export function KanbanBoard() {
           </p>
           <Button className="mt-6" onClick={openCreate}>
             Add application
+          </Button>
+        </div>
+      ) : filtered.length === 0 ? (
+        <div className="rounded-3xl border border-dashed border-white/10 bg-white/[0.03] px-6 py-12 text-center">
+          <h2 className="text-xl font-semibold text-white">No matches</h2>
+          <p className="mt-2 text-slate-400">
+            No applications match &ldquo;{search.trim()}&rdquo;.
+          </p>
+          <Button variant="secondary" className="mt-6" onClick={() => setSearch("")}>
+            Clear search
           </Button>
         </div>
       ) : (
