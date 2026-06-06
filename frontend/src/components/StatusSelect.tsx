@@ -24,7 +24,7 @@ export function StatusSelect({
       value={value}
       aria-label={ariaLabel ?? "Application status"}
       onChange={(event) => onChange(event.target.value as ApplicationStatus)}
-      className={`rounded-full border border-slate-200 bg-white text-slate-800 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 ${
+      className={`rounded-full border border-emerald-200 bg-white text-slate-800 outline-none focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/25 ${
         compact ? "px-2 py-1 text-xs" : "px-3 py-1.5 text-sm"
       }`}
     >

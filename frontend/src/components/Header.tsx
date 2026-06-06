@@ -14,7 +14,7 @@ export function Header() {
   }
 
   return (
-    <header className="border-b border-emerald-100 bg-white/90 backdrop-blur-xl">
+    <header className="border-b border-emerald-200 bg-white shadow-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
         <div>
           <p className="text-xs uppercase tracking-[0.35em] text-emerald-600">

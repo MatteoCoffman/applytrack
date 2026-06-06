@@ -130,7 +130,7 @@ export function KanbanBoard() {
       {loading ? (
         <p className="text-slate-500">Loading applications...</p>
       ) : applications.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-emerald-200 bg-emerald-50/50 px-6 py-16 text-center">
+        <div className="rounded-3xl border border-dashed border-emerald-300 bg-white px-6 py-16 text-center shadow-sm">
           <h2 className="text-xl font-semibold text-slate-900">No applications yet</h2>
           <p className="mt-2 text-slate-500">
             Add your first saved role or application to start tracking.
@@ -140,7 +140,7 @@ export function KanbanBoard() {
           </Button>
         </div>
       ) : filtered.length === 0 ? (
-        <div className="rounded-3xl border border-dashed border-emerald-200 bg-emerald-50/50 px-6 py-12 text-center">
+        <div className="rounded-3xl border border-dashed border-emerald-300 bg-white px-6 py-12 text-center shadow-sm">
           <h2 className="text-xl font-semibold text-slate-900">No matches</h2>
           <p className="mt-2 text-slate-500">
             No applications match &ldquo;{search.trim()}&rdquo;.

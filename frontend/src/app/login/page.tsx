@@ -39,7 +39,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen items-center justify-center px-6 py-12">
-      <div className="w-full max-w-md rounded-3xl border border-emerald-100 bg-white p-8 shadow-lg shadow-emerald-900/5">
+      <div className="w-full max-w-md rounded-3xl border border-emerald-200 bg-white p-8 shadow-lg shadow-emerald-900/10">
         <p className="text-xs uppercase tracking-[0.35em] text-emerald-600">
           ApplyTrack
         </p>

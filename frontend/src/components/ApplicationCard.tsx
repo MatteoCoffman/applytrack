@@ -18,7 +18,7 @@ export function ApplicationCard({
   onStatusChange,
 }: ApplicationCardProps) {
   return (
-    <article className="rounded-2xl border border-slate-200 bg-white p-4 transition hover:border-emerald-300 hover:shadow-md hover:shadow-emerald-900/5">
+    <article className="rounded-2xl border border-emerald-200 bg-white p-4 shadow-sm transition hover:border-emerald-400 hover:shadow-md">
       <div className="flex items-start justify-between gap-3">
         <button
           type="button"

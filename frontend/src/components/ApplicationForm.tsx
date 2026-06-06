@@ -97,7 +97,7 @@ export function ApplicationForm({
           value={notes}
           onChange={(event) => setNotes(event.target.value)}
           rows={3}
-          className="w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20"
+          className="w-full rounded-xl border border-emerald-200 bg-white px-4 py-2.5 text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-600/25"
           placeholder="Recruiter name, next steps, etc."
         />
       </label>
