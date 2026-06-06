@@ -29,6 +29,24 @@ export async function verifyEmail(email: string, code: string) {
 }
 
 export async function loginUser(email: string, password: string) {
+  try {
+    const current = await getCurrentUser();
+    const currentEmail =
+      current.signInDetails?.loginId ?? current.username ?? "";
+    const session = await fetchAuthSession();
+
+    if (
+      session.tokens?.idToken &&
+      currentEmail.toLowerCase() === email.toLowerCase()
+    ) {
+      return;
+    }
+
+    await signOut();
+  } catch {
+    // No active session — proceed with sign in.
+  }
+
   const result = await signIn({ username: email, password });
   if (!result.isSignedIn) {
     throw new Error("Sign in incomplete");
@@ -36,7 +54,7 @@ export async function loginUser(email: string, password: string) {
 }
 
 export async function logoutUser() {
-  await signOut();
+  await signOut({ global: true });
 }
 
 export async function getAuthEmail(): Promise<string | null> {

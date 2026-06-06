@@ -25,11 +25,19 @@ function parseBody<T>(event: APIGatewayProxyEventV2WithJWTAuthorizer): T {
   }
 }
 
+function normalizePath(rawPath: string): string {
+  const applicationsIndex = rawPath.indexOf("/applications");
+  if (applicationsIndex >= 0) {
+    return rawPath.slice(applicationsIndex);
+  }
+  return rawPath;
+}
+
 export async function route(
   event: APIGatewayProxyEventV2WithJWTAuthorizer
 ) {
   const method = event.requestContext.http.method;
-  const path = event.rawPath;
+  const path = normalizePath(event.rawPath);
 
   if (method === "OPTIONS") {
     return jsonResponse(200, { ok: true });
